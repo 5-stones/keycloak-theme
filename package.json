@@ -1,0 +1,27 @@
+{
+  "name": "themes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "groupId": "com.weare5stones.keycloak.themes",
+  "scripts": {
+    "build": "gulp build",
+    "force": "gulp force",
+    "dev": "yarn build && gulp",
+    "watch": "yarn build && gulp",
+    "start": "yarn build && gulp",
+    "clean": "rimraf dist",
+    "package": "yarn clean && yarn build && node ./bin/packager.js",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "postversion": "git push && git push --tags",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.2.2",
+    "gulp": "^4.0.2",
+    "gulp-ftlmin": "^0.0.3",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^8.0.0",
+    "rimraf": "^4.1.2"
+  }
+}
